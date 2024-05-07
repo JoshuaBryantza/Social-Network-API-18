@@ -19,11 +19,12 @@
 - All you would have to do is clone this repository.
 - Once you have clone it to your local computer, run `npm i` to install the node_modules.
 - When you have completed both of the above steps run `npm start` in your terminal and follow the prompts.
-- Use a app like postman to check all of your endpoints. 
+- Use a app like postman to check all of your endpoints.
 
 ## Usage
 
 - For anyone who looking to build a social network app.
+- checkout demo [here](https://drive.google.com/file/d/14kR6IfY_Rc8kdQ7YQV4OSsZp2RIIaJLL/view)
 
 ## License
 
