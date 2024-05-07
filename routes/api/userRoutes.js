@@ -4,22 +4,19 @@ const { User } = require('../../models');
 
 // GET all users
 router.get('/', async (req, res) => {
-  console.log('blaahhhhhhhh')
   try {
     const users = await User.find().populate('thoughts').populate('friends');
-    console.log(users);
     res.json(users);
   } catch (err) {
     res.status(500).json(err);
   }
-  console.log('ahhhhhhhh');
 });
 
 
 // GET a single user by ID and populate thought and friend data
 router.get('/:id', async (req, res) => {
   try {
-    const user = await User.findById(req.params.id).populate('thoughts').populate('friends');
+    const user = await User.findOne({_id : req.params.id}).populate('thoughts').populate('friends');
     res.json(user);
   } catch (err) {
     res.status(500).json(err);
@@ -30,16 +27,9 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const user = await User.create(req.body);
-    // const newUser = new User({
-    //   username: req.body.username,
-    //   email: req.body.email
-    // });
-    // newUser.save();
     res.json(user);
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
-
   }
 });
 
